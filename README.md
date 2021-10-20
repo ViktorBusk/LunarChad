@@ -8,10 +8,19 @@
         alt="License"
       />
   </a>
-  ![Neovim Minimum Version](https://img.shields.io/badge/Neovim-0.5+-blueviolet.svg?style=flat-square&logo=Neovim&logoColor=white)
+  <a href="https://neovim.io/"
+    ><img
+        src="https://img.shields.io/badge/Neovim-0.5+-blueviolet.svg?style=flat-square&logo=Neovim&logoColor=white"
+        alt="Neovim Minimum Version"
+      />
+  </a>
 
-  [![Lua](https://img.shields.io/badge/Made%20with%20Lua-blue.svg?style=for-the-badge&logo=lua)](#madewithlua)
-
+  <a href="https://www.lua.org/"
+    ><img
+        src="https://img.shields.io/badge/Made%20with%20Lua-blue.svg?style=for-the-badge&logo=lua"
+        alt="Made with Lua"
+      />
+  </a>
 </p>
 
 </div>
