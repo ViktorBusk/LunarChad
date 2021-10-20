@@ -1,4 +1,6 @@
 -- Custom lvim config
+-- TODO: Add options to configure statusline and/or bufferline -
+-- with other colors than the chosen base16 theme.
 lvim.custom = {
   tab = 2, -- tabline, swhiftwidth, tabstop
   theme = "onedarker",
