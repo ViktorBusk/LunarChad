@@ -28,11 +28,11 @@
 >The goal of this project is to combine both
 [LunarVim](https://github.com/LunarVim/LunarVim) and [NvChad](https://github.com/NvChad/NvChad), getting the best parts from each.
 
-* [LunarVim](https://github.com/LunarVim/LunarVim) is jam-packed, mainly with LSP and project support, right out of the box.
+* [LunarVim](https://github.com/LunarVim/LunarVim) has a great default configuration, with LSP + project support, right out of the box.
 
-* [NvChad](https://github.com/NvChad/NvChad) looks absolutely stunning, with a variety of built in themes to choose from.
+* [NvChad](https://github.com/NvChad/NvChad) looks great and comes with a variety of built in themes to choose from.
 
-**LunarChad** is built on top of [LunarVim](https://github.com/LunarVim/LunarVim) and stylized to look like [NvChad](https://github.com/NvChad/NvChad)
+**LunarChad** is a [LunarVim](https://github.com/LunarVim/LunarVim) configuration stylized to look like [NvChad](https://github.com/NvChad/NvChad)
 (with a personal touch 😄)
 
 ## Showcase
@@ -68,7 +68,7 @@ Start LunarVim by entering `lvim` in a terminal. Install the required plugins wi
 
 ## Configuration
 
-To configure **LunarChad** simply change the contents of `~/.config/lvim/config.lua`. By default, this file is used to source necessary **LunarChad** modules. **LunarChad** stores its configurations in the table `lvim.custom`. It mainly consists of information regarding apperance (colorscheme, bufferline, statusline etc.) and is defined in `~/.config/lvim/lua/custom/options.lua`.
+To configure **LunarChad** simply change the contents of `~/.config/lvim/config.lua`. By default, this file is used to source necessary **LunarChad** modules. **LunarChad** stores its configurations in the table `lvim.custom`. It mainly consists of information regarding appearance (colorscheme, bufferline, statusline etc.) and is defined in `~/.config/lvim/lua/custom/options.lua`.
 
 Example Config: 
 
