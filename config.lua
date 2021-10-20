@@ -12,13 +12,6 @@
   All lazy-loaded and built on top of NeoVim's fantastic -
   lua integration while still looking very beautiful!"
 
-  LunarVim ships jam packed, mainly with LSP and project support, right out of the box.
-
-  NvChad looks absolutely stunning, with a variety of built in themes to choose from.
-
-  Consequently, LunarChad is built on top of LunarVim and stylized to look like NvChad, -
-  with a personal touch of course ;^)
-
   LunarVim: https://github.com/LunarVim/LunarVim
   NvChad: https://github.com/NvChad/NvChad
 --]]
