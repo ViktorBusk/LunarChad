@@ -2,7 +2,7 @@
 
 <div align="center"><p>
 
-  <a href="https://github.com/ViktorBusk/LunarChad/blob/main/LICENSE"
+  <a href="https://github.com/ViktorBusk/LunarChad/blob/master/LICENSE"
     ><img
         src="https://img.shields.io/github/license/viktorbusk/LunarChad?style=flat-square&logo=GNU&label=License"
         alt="License"
@@ -135,7 +135,7 @@ Feel free to modify as you see fit. For more information visit [lunarvim.org](ht
 ## License
 This project is licensed under the GNU General Public License v3.0.
 <p>
-    <a href="https://github.com/ViktorBusk/LunarChad/blob/main/LICENSE">
+    <a href="https://github.com/ViktorBusk/LunarChad/blob/master/LICENSE">
       <img src="https://img.shields.io/github/license/viktorbusk/LunarChad?style=flat-square&logo=GNU&label=License" alt="License"
     />
 </p>
