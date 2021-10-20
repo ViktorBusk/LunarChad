@@ -28,7 +28,7 @@
 >The goal of this project is to combine both
 [LunarVim](https://github.com/LunarVim/LunarVim) and [NvChad](https://github.com/NvChad/NvChad), getting the best parts from each.
 
-* [LunarVim](https://github.com/LunarVim/LunarVim)  ships jam packed, mainly with LSP and project support, right out of the box.
+* [LunarVim](https://github.com/LunarVim/LunarVim) is jam-packed, mainly with LSP and project support, right out of the box.
 
 * [NvChad](https://github.com/NvChad/NvChad) looks absolutely stunning, with a variety of built in themes to choose from.
 
@@ -64,11 +64,11 @@ Clone **LunarChad** to your lvim configuration folder located at `~/.config/lvim
 ```sh
 git clone https://github.com/ViktorBusk/LunarChad.git ~/.config/lvim/
 ```
-Start LunarVim by entering `lvim` in a terminal. Install the required plugins with `:PackerSync` inside lvim.
+Start LunarVim by entering `lvim` in a terminal. Install the required plugins with `:PackerSync` inside the editor.
 
 ## Configuration
 
-To configure **LunarChad** simply change the contents of `~/.config/lvim/config.lua`. **LunarChad** specifc configurations are sourced in this file. **LunarChad** uses an additional minimalistic customization layer `lvim.custom`. It is used for global settings (mainly appearance) and can be found in `~/.config/lvim/lua/custom/options.lua`.
+To configure **LunarChad** simply change the contents of `~/.config/lvim/config.lua`. By default, this file is used to source necessary **LunarChad** modules. **LunarChad** stores its configurations in the table `lvim.custom`. It mainly consists of information regarding apperance (colorscheme, bufferline, statusline etc.) and is defined in `~/.config/lvim/lua/custom/options.lua`.
 
 Example Config: 
 
@@ -128,7 +128,7 @@ vim.opt.cmdheight = 1
 * LSP: `~/.config/lvim/lua/custom/lsp.lua`
 * Keybindings: `~/.config/lvim/lua/custom/keymappings.lua`
 
-Feel free to modify as you see fit. For more information visit [lunarvim.org](https://www.lunarvim.org/) and [nvchad.github.io](https://nvchad.github.io/).
+Please feel free to edit or make any changes you deem necessary. For more information visit [lunarvim.org](https://www.lunarvim.org/) and [nvchad.github.io](https://nvchad.github.io/).
 
 ## Author
 
