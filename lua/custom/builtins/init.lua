@@ -1,0 +1,5 @@
+require("custom.builtins.cmp")
+require("custom.builtins.dashboard")
+require("custom.builtins.others")
+require("custom.builtins.telescope")
+require("custom.builtins.treesitter")
