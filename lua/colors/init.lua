@@ -24,10 +24,22 @@ end
 
 -- returns a table of colors for given or current theme
 M.get = function(theme)
+  local module = ""
+
   if not theme then
-    theme = lvim.custom.base16.theme
+    if lvim.custom.base16.enable then
+      module = "hl_themes" -- Base16 theme
+      theme = lvim.custom.base16.theme
+    else
+      module = "colors.palettes" -- Custom themek
+      theme = lvim.custom.theme
+    end
   end
-  local theme_colors = require("hl_themes." .. theme)
+
+  local present, theme_colors = pcall(require, module .. "." .. theme)
+  if not present then
+    theme_colors = require("colors.palettes.default")
+  end
 
   return theme_colors
 end

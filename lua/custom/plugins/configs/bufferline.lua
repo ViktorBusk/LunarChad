@@ -1,8 +1,5 @@
 -- Source: https://github.com/NvChad/NvChad/blob/main/lua/plugins/configs/bufferline.lua
-local present, theme_colors = pcall(require, "hl_themes." .. lvim.custom.base16.theme)
-if not present then
-   return
-end
+local theme_colors = require("colors").get()
 
 local present, bufferline = pcall(require, "bufferline")
 if not present then

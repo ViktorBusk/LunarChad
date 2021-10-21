@@ -1,10 +1,6 @@
 -- Source: https://github.com/NvChad/NvChad/blob/main/lua/plugins/configs/statusline.lua
 -- Load colors from base16 theme
-local present, theme_colors = pcall(require,
-                                    "hl_themes." .. lvim.custom.base16.theme)
-if not present then
-  return
-end
+local theme_colors = require("colors").get()
 
 local lsp = require "feline.providers.lsp"
 

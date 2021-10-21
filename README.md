@@ -30,7 +30,7 @@
 
 * [LunarVim](https://github.com/LunarVim/LunarVim) has a great default configuration, with LSP + project support, right out of the box.
 
-* [NvChad](https://github.com/NvChad/NvChad) looks great and comes with a variety of built in themes to choose from.
+* [NvChad](https://github.com/NvChad/NvChad) looks stunning and comes with a variety of built in themes to choose from.
 
 **LunarChad** is a [LunarVim](https://github.com/LunarVim/LunarVim) configuration stylized to look like [NvChad](https://github.com/NvChad/NvChad)
 (with a personal touch 😄)
@@ -68,12 +68,12 @@ Start LunarVim by entering `lvim` in a terminal. Install the required plugins wi
 
 ## Configuration
 
-To configure **LunarChad** simply change the contents of `~/.config/lvim/config.lua`. By default, this file is used to source necessary **LunarChad** modules. **LunarChad** stores its configurations in the table `lvim.custom`. It mainly consists of information regarding appearance (colorscheme, bufferline, statusline etc.) and is defined in `~/.config/lvim/lua/custom/options.lua`.
+To configure **LunarChad** simply change the contents of `~/.config/lvim/config.lua`. By default, this file is used to source necessary **LunarChad** modules. **LunarChad** stores its configurations in a table `lvim.custom`. It mainly consists of data regarding appearance (colorscheme, bufferline, statusline etc.) and is defined in `~/.config/lvim/lua/custom/options.lua`.
 
-Example Config: 
+Example Config (default): 
 
 ```lua
--- Custom LunarChad config
+-- ~/.config/lvim/lua/custom/options.lua
 lvim.custom = {
   tab = 2, -- tabline, swhiftwidth, tabstop
   theme = "onedarker",
@@ -82,7 +82,7 @@ lvim.custom = {
     enable = true, -- If set to "false", "lvim.custom.theme" will be used instead.
     italic_comments = true,
     cursor_line = false,
-    theme = "doom-chad" -- https://github.com/NvChad/nvim-base16.lua/tree/master/lua/hl_themes
+    theme = "onedark" -- https://github.com/NvChad/nvim-base16.lua/tree/master/lua/hl_themes
   },
   statusline = {
     diagnostics = { enable = true },
@@ -128,7 +128,7 @@ vim.opt.cmdheight = 1
 * LSP: `~/.config/lvim/lua/custom/lsp.lua`
 * Keybindings: `~/.config/lvim/lua/custom/keymappings.lua`
 
-Please feel free to edit or make any changes you deem necessary. For more information visit [lunarvim.org](https://www.lunarvim.org/) and [nvchad.github.io](https://nvchad.github.io/).
+Please feel free to edit or make any changes you deem necessary. For more information visit [lunarvim.org](https://www.lunarvim.org/) or [nvchad.github.io](https://nvchad.github.io/).
 
 ## Author
 
