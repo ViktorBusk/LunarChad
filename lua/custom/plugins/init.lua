@@ -1,9 +1,8 @@
 -- Additional Plugins
 lvim.plugins = {
-  -- {
-  --   "folke/lsp-colors.nvim"
-  -- },
-  -- {
+  {
+    "folke/lsp-colors.nvim"
+  },
   {
     "karb94/neoscroll.nvim",
     config = function()

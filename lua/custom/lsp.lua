@@ -12,13 +12,11 @@ lvim.lsp.diagnostics.signs = {
   }
 }
 
-lvim.lsp.diagnostics.virtual_text = false
+lvim.lsp.diagnostics.virtual_text = true
 lvim.lsp.diagnostics.update_in_insert = false
 lvim.lsp.diagnostics.underline = true
 lvim.lsp.diagnostics.severity_sort = true
-
--- Don't show diagnostics in tree
-lvim.builtin.nvimtree.setup.diagnostics.enable = false
+lvim.builtin.nvimtree.setup.diagnostics.enable = true
 
 -- you can set a custom on_attach function that will be used for all the language servers
 -- See <https://github.com/neovim/nvim-lspconfig#keybindings-and-completion>
@@ -26,11 +24,23 @@ lvim.builtin.nvimtree.setup.diagnostics.enable = false
 -- There is no setting in lvim to disable numhl atm
 lvim.lsp.on_attach_callback = function(client, bufnr)
   local function disable_numhl()
+
+    local LSP_DEPRECATED_SIGN_MAP = {
+      ["LspDiagnosticsSignError"] = "DiagnosticSignError",
+      ["LspDiagnosticsSignWarning"] = "DiagnosticSignWarn",
+      ["LspDiagnosticsSignHint"] = "DiagnosticSignHint",
+      ["LspDiagnosticsSignInformation"] = "DiagnosticSignInfo",
+    }
+
     for _, sign in ipairs(lvim.lsp.diagnostics.signs.values) do
-      vim.fn.sign_define(sign.name,
-                         { texthl = sign.name, text = sign.text, numhl = "" })
+      local lsp_sign_name = LSP_DEPRECATED_SIGN_MAP[sign.name]
+      if vim.fn.has "nvim-0.5.1" > 0 and lsp_sign_name then
+        vim.fn.sign_define(lsp_sign_name, { texthl = lsp_sign_name, text = sign.text, numhl = "" })
+      end
+      vim.fn.sign_define(sign.name, { texthl = sign.name, text = sign.text, numhl = "" })
     end
   end
+
   disable_numhl()
 end
 
@@ -51,19 +61,19 @@ end
 -- end
 
 -- More information: https://www.lunarvim.org/languages
-lvim.lang.python.formatters = { { exe = "black" } }
+-- lvim.lang.python.formatters = { { exe = "black" } }
 
-lvim.lang.lua.formatters = {
-  {
-    exe = "lua-format",
-    args = {
-      "--indent-width", lvim.custom.tab, "--spaces-inside-table-braces",
-      "--no-chop-down-table", "--no-keep-simple-function-one-line",
-      "--no-keep-simple-control-block-one-line",
-      "--single-quote-to-double-quote"
-    }
-  }
-}
+-- lvim.lang.lua.formatters = {
+--   {
+--     exe = "lua-format",
+--     args = {
+--       "--indent-width", lvim.custom.tab, "--spaces-inside-table-braces",
+--       "--no-chop-down-table", "--no-keep-simple-function-one-line",
+--       "--no-keep-simple-control-block-one-line",
+--       "--single-quote-to-double-quote"
+--     }
+--   }
+-- }
 
 -- set an additional linter
 -- lvim.lang.python.linters = {

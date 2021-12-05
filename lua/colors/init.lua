@@ -1,7 +1,7 @@
 -- Source: https://github.com/NvChad/NvChad/blob/main/lua/colors/init.lua
 local M = {}
 
--- if theme given, load given theme if given, otherwise nvchad_theme
+-- load given theme if given, otherwise nvchad_theme
 M.init = function(theme)
   if not theme then
     theme = lvim.custom.base16.theme
@@ -12,7 +12,6 @@ M.init = function(theme)
   if present then
     -- first load the base16 theme
     base16(base16.themes(theme), true)
-
     -- unload to force reload
     package.loaded["colors.highlights" or false] = nil
     -- then load the highlights
@@ -31,7 +30,7 @@ M.get = function(theme)
       module = "hl_themes" -- Base16 theme
       theme = lvim.custom.base16.theme
     else
-      module = "colors.palettes" -- Custom themek
+      module = "colors.palettes" -- Custom theme
       theme = lvim.custom.theme
     end
   end

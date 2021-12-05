@@ -37,13 +37,13 @@
 
 ## Showcase
 
-##### [NvChad theme: doom-chad](https://github.com/NvChad/nvim-base16.lua/blob/master/lua/hl_themes/doom-chad.lua)
-
-<img src=".utils/images/preview.png?raw=true"></img>
-
 ##### [NvChad theme: onedark](https://github.com/NvChad/nvim-base16.lua/blob/master/lua/hl_themes/onedark.lua)
 
 <img src=".utils/images/lsp.png?raw=true"></img>
+
+##### [NvChad theme: doom-chad](https://github.com/NvChad/nvim-base16.lua/blob/master/lua/hl_themes/doom-chad.lua)
+
+<img src=".utils/images/preview.png?raw=true"></img>
 
 ##### [LunarVim theme: onedarker](https://github.com/LunarVim/onedarker.nvim)
 
@@ -82,6 +82,7 @@ lvim.custom = {
     enable = true, -- If set to "false", "lvim.custom.theme" will be used instead.
     italic_comments = true,
     cursor_line = false,
+    bold_highlight = false, -- Highlights document are bold
     theme = "onedark" -- https://github.com/NvChad/nvim-base16.lua/tree/master/lua/hl_themes
   },
   statusline = {
@@ -96,13 +97,12 @@ lvim.custom = {
     close = {
       next = "cycle", -- How to retrieve the next buffer
       quit = true -- Exit when last buffer is deleted
-    }
+    },
   }
 }
 
 -- General
 lvim.log.level = "warn"
-lvim.format_on_save = true
 
 -- Termnial
 lvim.builtin.terminal.active = true
@@ -127,6 +127,7 @@ vim.opt.cmdheight = 1
 * General Options: `~/.config/lvim/lua/custom/options.lua`
 * LSP: `~/.config/lvim/lua/custom/lsp.lua`
 * Keybindings: `~/.config/lvim/lua/custom/keymappings.lua`
+* Highlights: `~/.config/lvim/lua/colors/highlights.lua`
 
 Please feel free to edit or make any changes you deem necessary. For more information visit [lunarvim.org](https://www.lunarvim.org/) or [nvchad.github.io](https://nvchad.github.io/).
 

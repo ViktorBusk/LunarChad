@@ -6,6 +6,7 @@ lvim.custom = {
     -- Overrides the current theme (lvim.custom.theme)
     enable = true, -- If set to "false", "lvim.custom.theme" will be used instead.
     italic_comments = true,
+    bold_highlight = false,
     cursor_line = false,
     theme = "onedark" -- https://github.com/NvChad/nvim-base16.lua/tree/master/lua/hl_themes
   },
@@ -21,13 +22,12 @@ lvim.custom = {
     close = {
       next = "cycle", -- How to retrieve the next buffer
       quit = true -- Exit when last buffer is deleted
-    }
+    },
   }
 }
 
 -- General
 lvim.log.level = "warn"
-lvim.format_on_save = true
 
 -- Termnial
 lvim.builtin.terminal.active = true

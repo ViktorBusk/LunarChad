@@ -1,6 +1,7 @@
 -- Source: https://github.com/NvChad/NvChad/blob/main/lua/colors/highlights.lua
 local cmd = vim.cmd
 local colors = require("colors").get()
+
 -- Theme colors
 local black = colors.black
 local black2 = colors.black2
@@ -23,6 +24,8 @@ local dark_purple = colors.dark_purple
 local red = colors.red
 local white = colors.white
 local yellow = colors.yellow
+local one_bg3 = colors.one_bg3
+
 -- Define bg color
 -- @param group Group
 -- @param color Color
@@ -66,7 +69,7 @@ fg("cursorlinenr", white)
 fg("EndOfBuffer", black)
 
 -- For floating windows
-fg("FloatBorder", one_bg)
+fg("FloatBorder", blue)
 bg("NormalFloat", one_bg)
 
 -- Pmenu
@@ -89,7 +92,7 @@ fg("CmpItemMenu", teal) -- = { fg = C.light_gray, bg = C.none },
 -- misc
 
 -- inactive statuslines as thin lines
-fg("StatusLineNC", one_bg2 .. " gui=underline")
+fg("StatusLineNC", one_bg3 .. " gui=underline")
 
 fg("LineNr", grey)
 fg("NvimInternalError", red)
@@ -123,41 +126,90 @@ fg("IndentBlanklineChar", line)
 
 -- [[ LspDiagnostics
 
--- Defualts
-fg("LspDiagnosticsDefaultError", red)
-fg("LspDiagnosticsDefaultWarning", yellow)
-fg("LspDiagnosticsDefaultInformation", green)
-fg("LspDiagnosticsDefaultHint", purple)
+-- Document highlights
+if lvim.custom.base16.bold_highlight then
+  bg("LspReferenceRead", one_bg2 .. " gui=bold")
+  bg("LspReferenceText", one_bg2 .. " gui=bold")
+  bg("LspReferenceWrite", one_bg2 .. " gui=bold")
+else
+  bg("LspReferenceRead", one_bg2)
+  bg("LspReferenceText", one_bg2)
+  bg("LspReferenceWrite", one_bg2)
+end
 
--- VirtualText
-fg("LspDiagnosticsVirtualTextError", red)
-fg("LspDiagnosticsVirtualTextWarning", yellow)
-fg("LspDiagnosticsVirtualTextInformation", green)
-fg("LspDiagnosticsVirtualTextHint", purple)
+-- NeoVim Nightly
+if vim.fn.has "nvim-0.5.1" > 0 then
+  -- Main
+  fg("DiagnosticError", red);
+  fg("DiagnosticWarn", yellow);
+  fg("DiagnosticInfo", green);
+  fg("DiagnosticHint", purple);
 
--- Floating
-fg("LspDiagnosticsFloatingError", red)
-fg("LspDiagnosticsFloatingWarning", yellow)
-fg("LspDiagnosticsFloatingInformation", green)
-fg("LspDiagnosticsFloatingHint", purple)
+  -- VirtualText
+  fg("DiagnosticVirtualTextError", red);
+  fg("DiagnosticVirtualTextWarn", yellow);
+  fg("DiagnosticVirtualTextInfo", green);
+  fg("DiagnosticVirtualTextHint", purple);
 
--- Signs
-fg("LspDiagnosticsSignError", red)
-fg("LspDiagnosticsSignWarning", yellow)
-fg("LspDiagnosticsSignInformation", green)
-fg("LspDiagnosticsSignHint", purple)
+  -- Floating
+  fg("DiagnosticFloatingError", red);
+  fg("DiagnosticFloatingWarn", yellow);
+  fg("DiagnosticFloatingInfo", green);
+  fg("DiagnosticFloatingHint", purple);
 
--- Main
-fg("LspDiagnosticsError", red)
-fg("LspDiagnosticsWarning", yellow)
-fg("LspDiagnosticsInformation", green)
-fg("LspDiagnosticsHint", purple)
+  -- Signs
+  fg("DiagnosticSignError", red);
+  fg("DiagnosticSignWarn", yellow);
+  fg("DiagnosticSignInfo", green);
+  fg("DiagnosticSignHint", purple);
 
--- Underline
-fg("LspDiagnosticsUnderlineError", "NONE" .. " gui=underline")
-fg("LspDiagnosticsUnderlineWarning", "NONE" .. " gui=underline")
-fg("LspDiagnosticsUnderlineInformation", "NONE" .. " gui=underline")
-fg("LspDiagnosticsUnderlineHint", "NONE" .. " gui=underline")
+  -- Underline
+  -- fg("DiagnosticUnderlineError", red);
+  -- fg("DiagnosticUnderlineWarn", yellow);
+  -- fg("DiagnosticUnderlineInfo", green);
+  -- fg("DiagnosticUnderlineHint", purple);
+
+  fg("DiagnosticUnderlineError", "NONE" .. " gui=underline")
+  fg("DiagnosticUnderlineWarn", "NONE" .. " gui=underline")
+  fg("DiagnosticUnderlineInfo", "NONE" .. " gui=underline")
+  fg("DiagnosticUnderlineHint", "NONE" .. " gui=underline")
+else
+  -- Defualts
+  fg("LspDiagnosticsDefaultError", red)
+  fg("LspDiagnosticsDefaultWarning", yellow)
+  fg("LspDiagnosticsDefaultInformation", green)
+  fg("LspDiagnosticsDefaultHint", purple)
+
+  -- VirtualText
+  fg("LspDiagnosticsVirtualTextError", red)
+  fg("LspDiagnosticsVirtualTextWarning", yellow)
+  fg("LspDiagnosticsVirtualTextInformation", green)
+  fg("LspDiagnosticsVirtualTextHint", purple)
+
+  -- Floating
+  fg("LspDiagnosticsFloatingError", red)
+  fg("LspDiagnosticsFloatingWarning", yellow)
+  fg("LspDiagnosticsFloatingInformation", green)
+  fg("LspDiagnosticsFloatingHint", purple)
+
+  -- Signs
+  fg("LspDiagnosticsSignError", red)
+  fg("LspDiagnosticsSignWarning", yellow)
+  fg("LspDiagnosticsSignInformation", green)
+  fg("LspDiagnosticsSignHint", purple)
+
+  -- Main
+  fg("LspDiagnosticsError", red)
+  fg("LspDiagnosticsWarning", yellow)
+  fg("LspDiagnosticsInformation", green)
+  fg("LspDiagnosticsHint", purple)
+
+  -- Underline
+  fg("LspDiagnosticsUnderlineError", "NONE" .. " gui=underline")
+  fg("LspDiagnosticsUnderlineWarning", "NONE" .. " gui=underline")
+  fg("LspDiagnosticsUnderlineInformation", "NONE" .. " gui=underline")
+  fg("LspDiagnosticsUnderlineHint", "NONE" .. " gui=underline")
+end
 
 -- ]]
 
@@ -208,10 +260,10 @@ if lvim.transparent_window then
 end
 
 -- Telescope
-fg("TelescopeBorder", line)
-fg("TelescopePreviewBorder", grey)
-fg("TelescopePromptBorder", line)
-fg("TelescopeResultsBorder", line)
+fg("TelescopeBorder", one_bg)
+fg_bg("TelescopePreviewTitle", green, one_bg)
+fg_bg("TelescopePromptTitle", blue, one_bg)
+fg_bg("TelescopeResultsTitle", red, one_bg)
 
 -- Whichkey
 fg("WhichKey", purple)
