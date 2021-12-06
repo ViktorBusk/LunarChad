@@ -1,7 +1,7 @@
 -- https://github.com/LunarVim/LunarVim/issues/1553#issuecomment-920247252
 
 -- Neovide
-vim.opt.guifont = "monospace:h17"
+vim.opt.guifont = "monospace:h12"
 vim.g.neovide_refresh_rate=60
 vim.g.neovide_cursor_animation_length=0.035
 

@@ -5,6 +5,7 @@ local modules = {
 	"custom/lsp",
 	"custom/plugins",
 	"custom/autocmds",
+	"custom/neovide",
 }
 
 for _, mod in ipairs(modules) do
