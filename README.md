@@ -125,7 +125,6 @@ If you want to create a custom palette for a colorscheme, create a lua file and 
 * General Options: `~/.config/lvim/lua/custom/options.lua`
 * LSP: `~/.config/lvim/lua/custom/lsp.lua`
 * Keybindings: `~/.config/lvim/lua/custom/keymappings.lua`
-* Highlights: `~/.config/lvim/lua/colors/highlights.lua`
 
 Please feel free to edit or make any changes you deem necessary. For more information visit [lunarvim.org](https://www.lunarvim.org/) or [nvchad.github.io](https://nvchad.github.io/).
 
