@@ -9,7 +9,7 @@ signature.setup {
    floating_window = false,
    fix_pos = true,
    hint_enable = true,
-   hint_prefix = " ",
+   hint_prefix = " ",
    hint_scheme = "TSParameter", --"CmpItemMenu"
    hi_parameter = "Search",
    max_height = 22,
