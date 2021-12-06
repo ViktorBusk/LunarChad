@@ -118,6 +118,9 @@ vim.opt.showmode = true
 vim.opt.ruler = false
 vim.opt.cmdheight = 1
 ```
+
+If you want to create a custom palette for a colorscheme, create a lua file and place it in `~/.config/lvim/lua/colors/palettes/colorscheme_name.lua`. Make sure the file and the colorscheme have the same name and all required colors are defined. You can use `~/.config/lvim/lua/colors/palettes/default.lua`as reference.
+
 ### Essential Files
 * General Options: `~/.config/lvim/lua/custom/options.lua`
 * LSP: `~/.config/lvim/lua/custom/lsp.lua`

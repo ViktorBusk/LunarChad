@@ -27,15 +27,21 @@ M.get = function(theme)
 
   if not theme then
     if lvim.custom.base16.enable then
-      module = "hl_themes" -- Base16 theme
       theme = lvim.custom.base16.theme
     else
-      module = "colors.palettes" -- Custom theme
       theme = lvim.custom.theme
     end
   end
 
+  -- Try loading a custom palette with the same name
+  if not pcall(require,  "colors.palettes." .. theme) then
+      module = "hl_themes" -- Use base16 shell colors
+  else
+      module = "colors.palettes" -- Use custom shell colors
+  end
+
   local present, theme_colors = pcall(require, module .. "." .. theme)
+  -- Use fallback theme if no palette was found
   if not present then
     theme_colors = require("colors.palettes.default")
   end
