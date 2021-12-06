@@ -21,28 +21,28 @@ lvim.builtin.nvimtree.setup.diagnostics.enable = true
 -- you can set a custom on_attach function that will be used for all the language servers
 -- See <https://github.com/neovim/nvim-lspconfig#keybindings-and-completion>
 
--- There is no setting in lvim to disable numhl atm
-lvim.lsp.on_attach_callback = function(client, bufnr)
-  local function disable_numhl()
+-- There is no setting in lvim to disable numhl atm (uncomment "on_attach_callback")
+-- lvim.lsp.on_attach_callback = function(client, bufnr)
+--   local function disable_numhl()
 
-    local LSP_DEPRECATED_SIGN_MAP = {
-      ["LspDiagnosticsSignError"] = "DiagnosticSignError",
-      ["LspDiagnosticsSignWarning"] = "DiagnosticSignWarn",
-      ["LspDiagnosticsSignHint"] = "DiagnosticSignHint",
-      ["LspDiagnosticsSignInformation"] = "DiagnosticSignInfo",
-    }
+--     local LSP_DEPRECATED_SIGN_MAP = {
+--       ["LspDiagnosticsSignError"] = "DiagnosticSignError",
+--       ["LspDiagnosticsSignWarning"] = "DiagnosticSignWarn",
+--       ["LspDiagnosticsSignHint"] = "DiagnosticSignHint",
+--       ["LspDiagnosticsSignInformation"] = "DiagnosticSignInfo",
+--     }
 
-    for _, sign in ipairs(lvim.lsp.diagnostics.signs.values) do
-      local lsp_sign_name = LSP_DEPRECATED_SIGN_MAP[sign.name]
-      if vim.fn.has "nvim-0.5.1" > 0 and lsp_sign_name then
-        vim.fn.sign_define(lsp_sign_name, { texthl = lsp_sign_name, text = sign.text, numhl = "" })
-      end
-      vim.fn.sign_define(sign.name, { texthl = sign.name, text = sign.text, numhl = "" })
-    end
-  end
+--     for _, sign in ipairs(lvim.lsp.diagnostics.signs.values) do
+--       local lsp_sign_name = LSP_DEPRECATED_SIGN_MAP[sign.name]
+--       if vim.fn.has "nvim-0.5.1" > 0 and lsp_sign_name then
+--         vim.fn.sign_define(lsp_sign_name, { texthl = lsp_sign_name, text = sign.text, numhl = "" })
+--       end
+--       vim.fn.sign_define(sign.name, { texthl = sign.name, text = sign.text, numhl = "" })
+--     end
+--   end
 
-  disable_numhl()
-end
+--   disable_numhl()
+-- end
 
 -- you can overwrite the null_ls setup table (useful for setting the root_dir function)
 -- lvim.lsp.null_ls.setup = {
