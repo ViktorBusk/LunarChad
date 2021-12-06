@@ -1,9 +1,10 @@
 local modules = {
-  "custom.builtins.cmp",
-  "custom.builtins.dashboard",
-  "custom.builtins.others",
-  "custom.builtins.telescope",
-  "custom.builtins.treesitter",
+	"custom/keymappings",
+	"custom/options",
+	"custom/builtins",
+	"custom/lsp",
+	"custom/plugins",
+	"custom/autocmds",
 }
 
 for _, mod in ipairs(modules) do
@@ -12,3 +13,5 @@ for _, mod in ipairs(modules) do
 		error(("Error loading %s...\n\n%s"):format(mod, err))
 	end
 end
+
+require("custom.utils").on_init()

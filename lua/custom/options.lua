@@ -35,11 +35,6 @@ lvim.builtin.terminal.direction = "horizontal"
 lvim.builtin.terminal.size = 20
 lvim.builtin.terminal.shade_terminals = true
 
--- Tab settings
-vim.opt.showtabline = lvim.custom.tab
-vim.opt.shiftwidth = lvim.custom.tab
-vim.opt.tabstop = lvim.custom.tab
-
 -- Change the timeoutlen for whichkey to show
 vim.opt.timeoutlen = 400
 

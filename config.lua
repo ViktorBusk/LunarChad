@@ -17,11 +17,7 @@
 --]]
 
 -- Source config files
-require("custom.keymappings")
-require("custom.options")
-require("custom.utils").set_theme()
-require("custom.neovide")
-require("custom.builtins")
-require("custom.lsp")
-require("custom.plugins")
-require("custom.autocmds")
+local ok, err = pcall(require, "custom")
+if not ok then
+  error(("Error loading core...\n\n%s"):format(err))
+end

@@ -1,6 +1,11 @@
 -- Source: https://github.com/NvChad/NvChad/blob/main/lua/core/utils.lua
 local M = {}
 
+M.on_init = function()
+  M.set_theme()
+  M.set_options()
+end
+
 M.set_theme = function()
   -- Check which theme option is set
   if lvim.custom.base16.enable then
@@ -8,6 +13,13 @@ M.set_theme = function()
   else
     lvim.colorscheme = lvim.custom.theme
   end
+end
+
+M.set_options = function()
+  -- Apply user settings
+  vim.opt.showtabline = lvim.custom.tab
+  vim.opt.shiftwidth = lvim.custom.tab
+  vim.opt.tabstop = lvim.custom.tab
 end
 
 M.hide_statusline = function()

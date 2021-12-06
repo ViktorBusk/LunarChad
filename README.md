@@ -64,11 +64,11 @@ Clone **LunarChad** to your lvim configuration folder located at `~/.config/lvim
 ```sh
 git clone https://github.com/ViktorBusk/LunarChad.git ~/.config/lvim/
 ```
-Start LunarVim by entering `lvim` in a terminal. Install the required plugins with `:PackerSync` inside the editor.
+Start LunarVim by entering `lvim` inside a terminal. Install the required plugins with the command `:PackerSync`.
 
 ## Configuration
 
-To configure **LunarChad** simply change the contents of `~/.config/lvim/config.lua`. By default, this file is used to source necessary **LunarChad** modules. **LunarChad** stores its configurations in a table `lvim.custom`. It mainly consists of data regarding appearance (colorscheme, bufferline, statusline etc.) and is defined in `~/.config/lvim/lua/custom/options.lua`.
+To configure **LunarChad** simply change the contents of `~/.config/lvim/config.lua`. By default, this file is used to source necessary **LunarChad** modules. Configurations are for the most part just tweaks to LunarVims built in customization layer: `lvim`. **LunarChad** then provides additional settings through the nested table: `lvim.custom`. It mainly consists of data regarding appearance (colorscheme, bufferline, statusline etc.) and is defined in `~/.config/lvim/lua/custom/options.lua`.
 
 Example Config (default): 
 
@@ -81,8 +81,8 @@ lvim.custom = {
     -- Overrides the current theme (lvim.custom.theme)
     enable = true, -- If set to "false", "lvim.custom.theme" will be used instead.
     italic_comments = true,
+    bold_highlight = false,
     cursor_line = false,
-    bold_highlight = false, -- Highlights document are bold
     theme = "onedark" -- https://github.com/NvChad/nvim-base16.lua/tree/master/lua/hl_themes
   },
   statusline = {
@@ -109,11 +109,6 @@ lvim.builtin.terminal.active = true
 lvim.builtin.terminal.direction = "horizontal"
 lvim.builtin.terminal.size = 20
 lvim.builtin.terminal.shade_terminals = true
-
--- Tab settings
-vim.opt.showtabline = lvim.custom.tab
-vim.opt.shiftwidth = lvim.custom.tab
-vim.opt.tabstop = lvim.custom.tab
 
 -- Change the timeoutlen for whichkey to show
 vim.opt.timeoutlen = 400
