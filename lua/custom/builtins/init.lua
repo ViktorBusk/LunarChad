@@ -5,6 +5,7 @@ local modules = {
   "custom.builtins.telescope",
   "custom.builtins.treesitter",
   "custom.builtins.nvimtree",
+  "custom.builtins.gitsigns",
 }
 
 for _, mod in ipairs(modules) do
