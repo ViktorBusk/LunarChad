@@ -32,8 +32,7 @@
 
 * [NvChad](https://github.com/NvChad/NvChad) looks stunning and comes with a variety of built in themes to choose from.
 
-**LunarChad** is a [LunarVim](https://github.com/LunarVim/LunarVim) configuration stylized to look like [NvChad](https://github.com/NvChad/NvChad)
-(with a personal touch 😄)
+**LunarChad** is a [LunarVim](https://github.com/LunarVim/LunarVim) configuration stylized to look like [NvChad](https://github.com/NvChad/NvChad).
 
 ## Showcase
 
