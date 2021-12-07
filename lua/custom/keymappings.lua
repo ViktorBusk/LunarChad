@@ -4,8 +4,6 @@ lvim.leader = "space"
 lvim.keys.normal_mode["<C-s>"] = ":w<CR>"
 -- Telescope find projects
 lvim.keys.normal_mode["<C-p>"] = ":Telescope find_files<CR>"
--- SHIFT-q will close current buffer
-lvim.keys.normal_mode["<S-q>"] = ":bd<CR>"
 -- Centers search result
 lvim.keys.normal_mode["n"] = "nzz"
 -- Remap C-c to <for i in rnageesc>
