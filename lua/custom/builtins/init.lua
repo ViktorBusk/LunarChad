@@ -4,6 +4,7 @@ local modules = {
   "custom.builtins.others",
   "custom.builtins.telescope",
   "custom.builtins.treesitter",
+  "custom.builtins.nvimtree",
 }
 
 for _, mod in ipairs(modules) do
