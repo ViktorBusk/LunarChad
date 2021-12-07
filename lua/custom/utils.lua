@@ -10,6 +10,7 @@ M.set_theme = function()
   -- Check which theme option is set
   if lvim.custom.base16.enable then
     lvim.colorscheme = "default"
+    require("colors").init()
   else
     lvim.colorscheme = lvim.custom.theme
   end

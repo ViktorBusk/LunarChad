@@ -9,8 +9,6 @@ local blue = colors.blue
 local darker_black = colors.darker_black
 local folder_bg = colors.folder_bg
 local green = colors.green
-local vibrant_green = colors.vibrant_green
-local sun = colors.sun
 local grey = colors.grey
 local teal = colors.teal
 local grey_fg = colors.grey_fg
@@ -18,9 +16,8 @@ local line = colors.line
 local nord_blue = colors.nord_blue
 local one_bg = colors.one_bg
 local one_bg2 = colors.one_bg2
--- local pmenu_bg = colors.pmenu_bg
+local pmenu_bg = colors.pmenu_bg
 local purple = colors.purple
-local dark_purple = colors.dark_purple
 local red = colors.red
 local white = colors.white
 local yellow = colors.yellow
@@ -75,20 +72,13 @@ bg("NormalFloat", one_bg)
 -- Pmenu
 bg("Pmenu", one_bg)
 bg("PmenuSbar", one_bg2)
-bg("PmenuSel", blue)
-bg("PmenuThumb", grey_fg)
+bg("PmenuSel", pmenu_bg)
+bg("PmenuThumb", nord_blue)
 fg("CmpItemAbbr", white)
--- fg("CmpItemAbbrMatch", white)
--- fg("CmpItemKind", cmp_grey)
+fg("CmpItemAbbrMatch", white)
+fg("CmpItemKind", white)
 fg("CmpItemMenu", white)
--- fg("CmpDocumentation", white)-- = { fg = C.fg, bg = C.none },
--- fg("CmpDocumentationBorder", one_bg2) --= { fg = C.fg_dark, bg = C.none },
--- fg("CmpItemAbbr", white) -- = { fg = C.fg, bg = C.none },
-fg("CmpItemAbbrDeprecated", white) -- = { fg = C.gray, bg = C.none },
-fg("CmpItemAbbrMatch", teal) -- = { fg = C.cyan, bg = C.none },
-fg("CmpItemAbbrMatchFuzzy", teal) -- = { fg = C.cyan, bg = C.none },
-fg("CmpItemKind", purple) -- = { fg = C.blue, bg = C.none },
-fg("CmpItemMenu", teal) -- = { fg = C.light_gray, bg = C.none },
+
 -- misc
 
 -- inactive statuslines as thin lines
@@ -114,10 +104,9 @@ fg("DashboardHeader", grey_fg)
 fg("DashboardShortcut", grey_fg)
 
 -- Git signs
-fg_bg("DiffAdd", green, "none")
-fg_bg("DiffChange", yellow, "none")
-fg_bg("DiffDelete", red, "none")
-fg_bg("DiffText", yellow, "none")
+fg_bg("DiffAdd", nord_blue, "none")
+fg_bg("DiffChange", grey_fg, "none")
+fg_bg("DiffModified", nord_blue, "none")
 
 -- Indent blankline plugin
 fg("IndentBlanklineChar", line)
@@ -127,14 +116,16 @@ fg("IndentBlanklineChar", line)
 -- [[ LspDiagnostics
 
 -- Document highlights
-if lvim.custom.base16.bold_highlight then
-  bg("LspReferenceRead", one_bg2 .. " gui=bold")
-  bg("LspReferenceText", one_bg2 .. " gui=bold")
-  bg("LspReferenceWrite", one_bg2 .. " gui=bold")
-else
-  bg("LspReferenceRead", one_bg2)
-  bg("LspReferenceText", one_bg2)
-  bg("LspReferenceWrite", one_bg2)
+if lvim.custom.base16.document_highlight.enable then
+  if lvim.custom.base16.document_highlight.bold_highlight then
+    bg("LspReferenceRead", one_bg2 .. " gui=bold")
+    bg("LspReferenceText", one_bg2 .. " gui=bold")
+    bg("LspReferenceWrite", one_bg2 .. " gui=bold")
+  else
+    bg("LspReferenceRead", one_bg2)
+    bg("LspReferenceText", one_bg2)
+    bg("LspReferenceWrite", one_bg2)
+  end
 end
 
 -- NeoVim Nightly
@@ -169,10 +160,10 @@ if vim.fn.has "nvim-0.5.1" > 0 then
   -- fg("DiagnosticUnderlineInfo", green);
   -- fg("DiagnosticUnderlineHint", purple);
 
-  fg("DiagnosticUnderlineError", "NONE" .. " gui=underline")
-  fg("DiagnosticUnderlineWarn", "NONE" .. " gui=underline")
-  fg("DiagnosticUnderlineInfo", "NONE" .. " gui=underline")
-  fg("DiagnosticUnderlineHint", "NONE" .. " gui=underline")
+  fg("DiagnosticUnderlineError", "NONE" .. " gui=underline" .. " guisp=" .. red)
+  fg("DiagnosticUnderlineWarn", "NONE" .. " gui=underline" .. " guisp=" .. yellow)
+  fg("DiagnosticUnderlineInfo", "NONE" .. " gui=underline" .. " guisp=" .. green)
+  fg("DiagnosticUnderlineHint", "NONE" .. " gui=underline" .. " guisp=" .. purple)
 else
   -- Defualts
   fg("LspDiagnosticsDefaultError", red)
@@ -213,42 +204,27 @@ end
 
 -- ]]
 
--- [[ NvimTree
-
--- General
+-- NvimTree
+fg("NvimTreeEmptyFolderName", blue)
+fg("NvimTreeEndOfBuffer", darker_black)
+fg("NvimTreeFolderIcon", folder_bg)
+fg("NvimTreeFolderName", folder_bg)
+fg("NvimTreeGitDirty", red)
+fg("NvimTreeIndentMarker", one_bg2)
 bg("NvimTreeNormal", darker_black)
 bg("NvimTreeNormalNC", darker_black)
-fg("NvimTreeEndOfBuffer", darker_black)
+fg("NvimTreeOpenedFolderName", blue)
+fg("NvimTreeRootFolder", red .. " gui=underline") -- enable underline for root folder in nvim tree
+fg_bg("NvimTreeStatuslineNc", darker_black, darker_black)
 fg("NvimTreeVertSplit", darker_black)
 bg("NvimTreeVertSplit", darker_black)
-fg_bg("NvimTreeStatuslineNc", darker_black, darker_black)
 fg_bg("NvimTreeWindowPicker", red, black2)
 
--- Details
-bg("NvimTreeCursorLine", one_bg)
-fg("NvimTreeIndentMarker", white)
-
--- Folders
-fg("NvimTreeEmptyFolderName", grey_fg)
-fg("NvimTreeFolderIcon", nord_blue)
-fg("NvimTreeFolderName", folder_bg)
-fg("NvimTreeOpenedFolderName", blue .. " gui=italic")
-fg("NvimTreeRootFolder", red .. " gui=underline") -- enable underline for root folder in nvim tree
-
--- Files
-fg("NvimTreeImageFile", dark_purple)
-fg("NvimTreeSpecialFile", sun)
-fg("NvimTreeExecFile", vibrant_green)
-fg("NvimTreeSymlink", blue)
-
--- Git
-fg("NvimTreeGitNew", green)
-fg("NvimTreeGitDirty", green)
-fg("NvimTreeGitDeleted", red)
-fg("NvimTreeGitMerge", yellow)
-fg("NvimTreeGitRenamed", yellow)
-fg("NvimTreeGitStaged", green)
-
+-- LSP
+fg("NvimTreeLspDiagnosticsError", red)
+fg("NvimTreeLspDiagnosticsWarning", yellow)
+fg("NvimTreeLspDiagnosticsInformation", green)
+fg("NvimTreeLspDiagnosticsHint", purple)
 -- ]]
 
 -- Disable some highlight in nvim tree if transparency enabled
