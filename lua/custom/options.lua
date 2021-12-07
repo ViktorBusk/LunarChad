@@ -2,11 +2,17 @@
 lvim.custom = {
   tab = 2, -- tabline, swhiftwidth, tabstop
   theme = "onedarker",
+  NvChad ={
+    mappings = true, -- If true, Set default keybindings to NvChad defaults, else use LunarVim defaults
+  },
   base16 = {
     -- Overrides the current theme (lvim.custom.theme)
     enable = true, -- If set to "false", "lvim.custom.theme" will be used instead.
-    italic_comments = true,
-    bold_highlight = false,
+    italic_comments = false,
+    document_highlight = {
+      enable = false,
+      bold_highlight = false,
+    },
     cursor_line = false,
     theme = "onedark" -- https://github.com/NvChad/nvim-base16.lua/tree/master/lua/hl_themes
   },
