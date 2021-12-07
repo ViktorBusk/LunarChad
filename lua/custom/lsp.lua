@@ -16,7 +16,7 @@ lvim.lsp.diagnostics.virtual_text = true
 lvim.lsp.diagnostics.update_in_insert = false
 lvim.lsp.diagnostics.underline = true
 lvim.lsp.diagnostics.severity_sort = true
-lvim.builtin.nvimtree.setup.diagnostics.enable = true
+lvim.builtin.nvimtree.setup.diagnostics.enable = false
 
 -- you can set a custom on_attach function that will be used for all the language servers
 -- See <https://github.com/neovim/nvim-lspconfig#keybindings-and-completion>
