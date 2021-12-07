@@ -1,12 +1,13 @@
 -- Additional Plugins
 lvim.plugins = {
   {
-    "folke/lsp-colors.nvim"
+    "andymass/vim-matchup",
   },
   {
-    "karb94/neoscroll.nvim",
+    "lukas-reineke/indent-blankline.nvim",
+    event = "BufRead",
     config = function()
-      require("custom.plugins.configs.neoscroll")
+      require("custom.plugins.configs.blankline")
     end
   },
   {
@@ -19,25 +20,6 @@ lvim.plugins = {
     "ray-x/lsp_signature.nvim",
     config = function()
       require("custom.plugins.configs.signature")
-    end
-  },
-  {
-    "iamcco/markdown-preview.nvim",
-    config = function()
-      require("custom.plugins.configs.markdown")
-    end
-  },
-  {
-    "easymotion/vim-easymotion",
-    config = function()
-      require("custom.plugins.configs.easymotion")
-    end
-  },
-  {
-    "folke/todo-comments.nvim",
-    requires = "nvim-lua/plenary.nvim",
-    config = function()
-      require("custom.plugins.configs.todo")
     end
   },
   {

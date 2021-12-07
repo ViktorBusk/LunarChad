@@ -38,7 +38,7 @@ lvim.log.level = "warn"
 -- Termnial
 lvim.builtin.terminal.active = true
 lvim.builtin.terminal.direction = "horizontal"
-lvim.builtin.terminal.size = 20
+lvim.builtin.terminal.size = 15
 lvim.builtin.terminal.shade_terminals = true
 
 -- Change the timeoutlen for whichkey to show
