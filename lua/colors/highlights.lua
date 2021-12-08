@@ -76,7 +76,6 @@ bg("PmenuSel", pmenu_bg)
 bg("PmenuThumb", nord_blue)
 fg("CmpItemAbbr", white)
 fg("CmpItemAbbrMatch", white)
-fg("CmpItemKind", white)
 fg("CmpItemMenu", white)
 
 -- misc

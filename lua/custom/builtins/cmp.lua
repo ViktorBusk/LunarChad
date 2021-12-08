@@ -1,4 +1,18 @@
 -- CMP
+lvim.builtin.cmp.formatting.fields = { "abbr", "kind", "menu" }
+
+lvim.builtin.cmp.formatting.format = function(entry, vim_item)
+  vim_item.kind = string.format(
+    "%s %s",
+    lvim.builtin.cmp.formatting.kind_icons[vim_item.kind],
+    vim_item.kind
+  )
+  vim_item.menu = lvim.builtin.cmp.formatting.source_names[entry.source.name]
+  vim_item.dup = lvim.builtin.cmp.formatting.duplicates[entry.source.name]
+    or lvim.builtin.cmp.formatting.duplicates_default
+  return vim_item
+end
+
 lvim.builtin.cmp.formatting.kind_icons = {
   Text = "",
   Method = "",
@@ -33,8 +47,8 @@ lvim.builtin.cmp.formatting.source_names = {
   path = "[PATH]",
   calc = "[CALC]",
   cmp_tabnine = "[TABNINE]",
-  vsnip = "[SNIPP]",
-  luasnip = "[SNIPP]",
+  vsnip = "",
+  luasnip = "",
   buffer = "[BUF]",
 }
 
