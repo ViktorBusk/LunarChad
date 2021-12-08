@@ -1,4 +1,5 @@
 local modules = {
+  "custom.builtins.icons",
   "custom.builtins.cmp",
   "custom.builtins.dashboard",
   "custom.builtins.others",
