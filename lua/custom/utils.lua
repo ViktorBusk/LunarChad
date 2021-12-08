@@ -2,14 +2,20 @@
 local M = {}
 
 M.on_init = function()
+  M.reset_lvim_settings ()
   M.set_theme()
   M.set_options()
+end
+
+M.reset_lvim_settings = function()
+  -- Don't highlight after yanking text
+  lvim.autocommands._general_settings[2] = nil
 end
 
 M.set_theme = function()
   -- Check which theme option is set
   if lvim.custom.base16.enable then
-    lvim.colorscheme = "default"
+    lvim.colorscheme = ""
     require("colors").init()
   else
     lvim.colorscheme = lvim.custom.theme
