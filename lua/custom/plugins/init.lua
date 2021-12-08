@@ -1,6 +1,9 @@
 -- Additional Plugins
 lvim.plugins = {
   {
+    "NvChad/nvim-base16.lua",
+  },
+  {
     "andymass/vim-matchup",
   },
   {
@@ -21,14 +24,6 @@ lvim.plugins = {
     config = function()
       require("custom.plugins.configs.signature")
     end
-  },
-  {
-    "NvChad/nvim-base16.lua",
-    config = function()
-      if lvim.custom.base16.enable then
-        require("colors").init()
-      end
-    end,
   },
   {
     "akinsho/bufferline.nvim",
