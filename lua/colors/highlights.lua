@@ -54,6 +54,11 @@ end
 
 -- fg_bg("MatchParen", black, red)
 
+-- Disable bold text for statements (Visable with doxygen highlights)
+if not lvim.custom.doxygen_highlight.bold_highlight then
+  cmd("hi Statement gui=NONE")
+end
+
 -- Disable cusror line
 if not lvim.custom.base16.cursor_line then
   cmd "hi clear CursorLine"

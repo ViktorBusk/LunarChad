@@ -22,6 +22,12 @@ M.set_theme = function()
   end
 end
 
+M.on_doxygen_highlight = function()
+  if not lvim.custom.doxygen_highlight.enable then
+    vim.api.nvim_command("syntax clear")
+  end
+end
+
 M.set_options = function()
   -- Apply user settings
   vim.opt.showtabline = lvim.custom.tab
