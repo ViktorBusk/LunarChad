@@ -81,6 +81,10 @@ lvim.custom = {
   NvChad ={
     mappings = true, -- If true, Set default keybindings to NvChad defaults, else use LunarVim defaults
   },
+  doxygen_highlight = {
+    enable = false, -- Doxygen highlights is still used if treesitter is not active in the current buffer
+    bold_highlight = false,
+  },
   base16 = {
     -- Overrides the current theme (lvim.custom.theme)
     enable = true, -- If set to "false", "lvim.custom.theme" will be used instead.

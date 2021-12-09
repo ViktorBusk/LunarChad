@@ -8,7 +8,7 @@ lvim.custom = {
     mappings = true, -- If true, Set default keybindings to NvChad defaults, else use LunarVim defaults
   },
   doxygen_highlight = {
-    enable = false,
+    enable = false, -- Doxygen highlights is still used if treesitter is not active in the current buffer
     bold_highlight = false,
   },
   base16 = {

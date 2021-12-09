@@ -22,9 +22,17 @@ M.set_theme = function()
   end
 end
 
+M.treesitter_is_active = function()
+local buf = vim.api.nvim_get_current_buf()
+  local highlighter = require "vim.treesitter.highlighter"
+  return highlighter.active[buf]
+end
+
 M.on_doxygen_highlight = function()
   if not lvim.custom.doxygen_highlight.enable then
-    vim.api.nvim_command("syntax clear")
+    if M.treesitter_is_active() then
+      vim.api.nvim_command("syntax clear")
+    end
   end
 end
 
