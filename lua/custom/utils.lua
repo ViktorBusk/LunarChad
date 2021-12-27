@@ -40,8 +40,11 @@ M.custom_onedarker = function()
   vim.cmd("hi LspReferenceText gui=NONE")
   vim.cmd("hi LspReferenceWrite gui=NONE")
 
-  -- TODOs
-  vim.cmd("hi Todo gui=italic")
+  -- Comments
+  if not lvim.custom.base16.italic_comments then
+    vim.cmd("hi Todo guifg=".. onedarker.warning_orange .. " gui=NONE")
+    vim.cmd("hi Comment gui=NONE")
+  end
 
   -- Use undercurls
   vim.cmd("hi DiagnosticUnderlineError gui=undercurl guisp=" .. onedarker.error_red)
