@@ -1,8 +1,15 @@
 -- keymappings [view all the defaults by pressing <leader>Lk]
 lvim.leader = "space"
 -- add your own keymapping
-lvim.keys.normal_mode["<C-s>"] = ":w<CR>" -- Save with Ctrl+s
-
+lvim.keys.normal_mode["<C-s>"] = ":w<CR>"
+-- Telescope find projects
+lvim.keys.normal_mode["<C-p>"] = ":Telescope find_files<CR>"
+-- SHIFT-q will close current buffer
+lvim.keys.normal_mode["<S-q>"] = ":bd<CR>"
+-- Centers search result
+lvim.keys.normal_mode["n"] = "nzz"
+-- Remap C-c to <for i in rnageesc>
+lvim.keys.normal_mode["<C-c>"] = "<esc>"
 -- unmap a default keymapping
 
 -- Unmap toggleterm and use basic instead
@@ -23,6 +30,14 @@ lvim.keys.normal_mode["<C-s>"] = ":w<CR>" -- Save with Ctrl+s
 --   lvim.builtin.telescope.defaults.mappings.n["<C-j>"] = actions.move_selection_next
 --   lvim.builtin.telescope.defaults.mappings.n["<C-k>"] = actions.move_selection_previous
 -- end
+
+-- Use which-key to add extra bindings with the leader-key prefix
+lvim.builtin.which_key.mappings["m"] = { "<cmd>MarkdownPreview<CR>", "Markdown Preview" }
+
+-- Easymotion, Type 2 characters
+lvim.builtin.which_key.mappings["a"] = { "<Plug>(easymotion-overwin-f2)", "EasyMotion" }
+
+lvim.builtin.which_key.mappings["t"] = { "<cmd>TodoTelescope<CR>", "Todos" }
 
 lvim.builtin.which_key.mappings["s"]["b"] = {
   "<cmd>Telescope marks<CR>", "Bookmarks"

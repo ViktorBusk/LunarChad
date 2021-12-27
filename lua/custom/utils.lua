@@ -15,7 +15,6 @@ M.reset_lvim_settings = function()
 
 end
 
--- this 
 M.set_theme = function()
   -- Check which theme option is set
   if lvim.custom.base16.enable then
@@ -42,7 +41,7 @@ M.custom_onedarker = function()
   vim.cmd("hi LspReferenceWrite gui=NONE")
 
   -- TODOs
-  vim.cmd("hi Todo gui=NONE")
+  vim.cmd("hi Todo gui=italic")
 
   -- Use undercurls
   vim.cmd("hi DiagnosticUnderlineError gui=undercurl guisp=" .. onedarker.error_red)
@@ -59,6 +58,7 @@ M.on_doxygen_highlight = function()
   if not lvim.custom.doxygen_highlight.bold_highlight then
     vim.cmd("hi Statement gui=NONE")
     vim.cmd("hi Identifier gui=NONE")
+    vim.cmd("hi Type gui=NONE")
   end
 
   if not lvim.custom.doxygen_highlight.enable then

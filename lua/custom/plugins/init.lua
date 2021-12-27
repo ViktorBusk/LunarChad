@@ -4,14 +4,25 @@ lvim.plugins = {
     "NvChad/nvim-base16.lua",
   },
   {
+    "tikhomirov/vim-glsl"
+  },
+  -- {
+  --   "karb94/neoscroll.nvim",
+  --   config = function()
+  --     require("custom.plugins.configs.neoscroll")
+  --   end
+  -- },
+  {
+    "easymotion/vim-easymotion",
+    config = function()
+      require("custom.plugins.configs.easymotion")
+    end
+  },
+  {
     "folke/todo-comments.nvim",
     requires = "nvim-lua/plenary.nvim",
     config = function()
-      require("todo-comments").setup {
-    -- your configuration comes here
-    -- or leave it empty to use the default settings
-    -- refer to the configuration section below
-    }
+      require("custom.plugins.configs.todo")
     end
   },
   {
