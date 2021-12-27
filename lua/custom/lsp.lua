@@ -1,6 +1,6 @@
 -- generic LSP settings
 lvim.format_on_save = false
-lvim.lsp.automatic_servers_installation = true
+lvim.lsp.automatic_servers_installation = false
 
 lvim.lsp.diagnostics.signs = {
   active = true,
@@ -12,7 +12,7 @@ lvim.lsp.diagnostics.signs = {
   }
 }
 
-lvim.lsp.diagnostics.virtual_text = true
+lvim.lsp.diagnostics.virtual_text = false
 lvim.lsp.diagnostics.update_in_insert = false
 lvim.lsp.diagnostics.underline = true
 lvim.lsp.diagnostics.severity_sort = true
@@ -35,9 +35,9 @@ lvim.lsp.on_attach_callback = function(client, bufnr)
     for _, sign in ipairs(lvim.lsp.diagnostics.signs.values) do
       local lsp_sign_name = LSP_DEPRECATED_SIGN_MAP[sign.name]
       if vim.fn.has "nvim-0.5.1" > 0 and lsp_sign_name then
-        vim.fn.sign_define(lsp_sign_name, { texthl = lsp_sign_name, text = sign.text, numhl = lsp_sign_name })
+        vim.fn.sign_define(lsp_sign_name, { texthl = lsp_sign_name, text = "", numhl = "" })
       end
-      vim.fn.sign_define(sign.name, { texthl = sign.name, text = sign.text, numhl = sign.name })
+      vim.fn.sign_define(sign.name, { texthl = sign.name, text = "", numhl = "" })
     end
   end
 

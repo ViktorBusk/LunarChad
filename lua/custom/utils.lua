@@ -12,8 +12,10 @@ M.reset_lvim_settings = function()
   if not lvim.custom.yank_highlight then
     lvim.autocommands._general_settings[2] = nil
   end
+
 end
 
+-- this 
 M.set_theme = function()
   -- Check which theme option is set
   if lvim.custom.base16.enable then
@@ -30,7 +32,35 @@ local buf = vim.api.nvim_get_current_buf()
   return highlighter.active[buf]
 end
 
+M.custom_onedarker = function()
+  -- Load palette
+  local onedarker = require("onedarker.palette")
+
+  -- Document highlights
+  vim.cmd("hi LspReferenceRead gui=NONE")
+  vim.cmd("hi LspReferenceText gui=NONE")
+  vim.cmd("hi LspReferenceWrite gui=NONE")
+
+  -- TODOs
+  vim.cmd("hi Todo gui=NONE")
+
+  -- Use undercurls
+  vim.cmd("hi DiagnosticUnderlineError gui=undercurl guisp=" .. onedarker.error_red)
+  vim.cmd("hi DiagnosticUnderlineWarn gui=undercurl guisp=" .. onedarker.warning_orange)
+  vim.cmd("hi DiagnosticUnderlineInfo gui=undercurl guisp=" .. onedarker.info_yellow)
+  vim.cmd("hi DiagnosticUnderlineHint gui=undercurl guisp=" .. onedarker.hint_blue)
+end
+
 M.on_doxygen_highlight = function()
+  if lvim.custom.theme == "onedarker" and not lvim.custom.base16.enable then
+    M.custom_onedarker()
+  end
+
+  if not lvim.custom.doxygen_highlight.bold_highlight then
+    vim.cmd("hi Statement gui=NONE")
+    vim.cmd("hi Identifier gui=NONE")
+  end
+
   if not lvim.custom.doxygen_highlight.enable then
     if M.treesitter_is_active() then
       vim.api.nvim_command("syntax clear")
@@ -171,6 +201,27 @@ M.close_buffer = function(bufexpr, force)
   if vim.fn.buflisted(buf) == 1 then
     switch_buffer(windows, buf)
   end
+end
+-- Define bg color
+-- @param group Group
+-- @param color Color
+M.bg = function(group, color)
+  vim.cmd("hi " .. group .. " guibg=" .. color)
+end
+
+-- Define fg color
+-- @param group Group
+-- @param color Color
+M.fg = function(group, color)
+  vim.cmd("hi " .. group .. " guifg=" .. color)
+end
+
+-- Define bg and fg color
+-- @param group Group
+-- @param fgcol Fg Color
+-- @param bgcol Bg Color
+M.fg_bg = function(group, fgcol, bgcol)
+  vim.cmd("hi " .. group .. " guifg=" .. fgcol .. " guibg=" .. bgcol)
 end
 --
 return M

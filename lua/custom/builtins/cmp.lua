@@ -16,7 +16,7 @@ end
 lvim.builtin.cmp.formatting.kind_icons = {
   Text = "",
   Method = "",
-  Function = "",
+  Function = "",
   Constructor = "",
   Field = "ﰠ",
   Variable = "",
@@ -42,14 +42,14 @@ lvim.builtin.cmp.formatting.kind_icons = {
 }
 
 lvim.builtin.cmp.formatting.source_names = {
-  nvim_lsp = "[LSP]",
-  emoji = "[EMOJI]",
-  path = "[PATH]",
-  calc = "[CALC]",
-  cmp_tabnine = "[TABNINE]",
+  nvim_lsp = "",
+  emoji = "",
+  path = "",
+  calc = "",
+  cmp_tabnine = "",
   vsnip = "",
   luasnip = "",
-  buffer = "[BUF]",
+  buffer = "",
 }
 
 lvim.builtin.cmp.documentation = {}

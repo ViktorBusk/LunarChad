@@ -6,7 +6,7 @@ end
 signature.setup {
   bind = true,
   doc_lines = 0,
-  floating_window = true,
+  floating_window = false,
   fix_pos = true,
   hint_enable = true,
   hint_prefix = " ",

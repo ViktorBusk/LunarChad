@@ -24,27 +24,10 @@ local yellow = colors.yellow
 local orange = colors.orange
 local one_bg3 = colors.one_bg3
 
--- Define bg color
--- @param group Group
--- @param color Color
-local function bg(group, color)
-  cmd("hi " .. group .. " guibg=" .. color)
-end
-
--- Define fg color
--- @param group Group
--- @param color Color
-local function fg(group, color)
-  cmd("hi " .. group .. " guifg=" .. color)
-end
-
--- Define bg and fg color
--- @param group Group
--- @param fgcol Fg Color
--- @param bgcol Bg Color
-local function fg_bg(group, fgcol, bgcol)
-  cmd("hi " .. group .. " guifg=" .. fgcol .. " guibg=" .. bgcol)
-end
+-- functions for setting highlights
+local fg = require("core.utils").fg
+local fg_bg = require("core.utils").fg_bg
+local bg = require("core.utils").bg
 
 -- Comments
 if lvim.custom.base16.italic_comments then

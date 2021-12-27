@@ -33,6 +33,9 @@ local colors = {
    lightbg2 = onedarker.fg_gutter,
    pmenu_bg = onedarker.blue,
    folder_bg = onedarker.blue,
+   hint_blue = onedarker.hint_blue,
+   info_green = onedarker.info_yellow,
+
 }
 
 return colors

@@ -4,14 +4,14 @@ lvim.custom = {
   theme = "onedarker",
   -- TODO: Add option to use default NvChad mappings
   -- Maybe add option to provide a "chadrc" and/or "init" from an existing NvChad config
-  yank_highlight = false, -- Highlight after yanking text
+  yank_highlight = true, -- Highlight after yanking text
   doxygen_highlight = {
-    enable = false, -- Doxygen highlights is still used if treesitter is not active in the current buffer
+    enable = true, -- Doxygen highlights is still used if treesitter is not active in the current buffer
     bold_highlight = false,
   },
   base16 = {
     -- Overrides the current theme (lvim.custom.theme)
-    enable = true, -- If set to "false", "lvim.custom.theme" will be used instead.
+    enable = false, -- If set to "false", "lvim.custom.theme" will be used instead.
     italic_comments = false,
     document_highlight = {
       enable = false,
@@ -21,7 +21,7 @@ lvim.custom = {
     theme = "onedark" -- https://github.com/NvChad/nvim-base16.lua/tree/master/lua/hl_themes
   },
   statusline = {
-    diagnostics = { enable = true },
+    diagnostics = { enable = false },
     lsp_progress = { enable = true },
     hidden = { "help", "dashboard", "NvimTree", "terminal" },
     shortline = true, -- Show short statusline on small screens
