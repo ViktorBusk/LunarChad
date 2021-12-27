@@ -15,13 +15,22 @@ lvim.builtin.nvimtree = {
   active = true,
   on_config_done = nil,
   setup = {
+    disable_netrw = true,
+    hijack_netrw = true,
     open_on_setup = false,
+    ignore_ft_on_setup = {
+      "startify",
+      "dashboard",
+      "alpha",
+    },
+    update_to_buf_dir = {
+      enable = true,
+      auto_open = true,
+    },
     auto_close = false,
     open_on_tab = false,
     hijack_cursor = true,
-    update_focused_file = {
-      enable = true,
-    },
+    update_cwd = false,
     diagnostics = {
       enable = true,
       icons = {
@@ -31,16 +40,31 @@ lvim.builtin.nvimtree = {
         error = "",
       },
     },
-   filters = {
-      dotfiles = false,
-   },
+    update_focused_file = {
+      enable = true,
+    },
+    system_open = {
+      cmd = nil,
+      args = {},
+    },
+    git = {
+      enable = true,
+      ignore = false,
+      timeout = 200,
+    },
     view = {
-      width = 25,
+      allow_resize = true,
       side = "left",
-      auto_resize = true,
+      width = 25,
+      hide_root_folder = true,
       mappings = {
         custom_only = false,
+        list = {},
       },
+    },
+    filters = {
+      dotfiles = false,
+      --custom = { ".git", "node_modules", ".cache" },
     },
   },
   show_icons = {
@@ -50,14 +74,10 @@ lvim.builtin.nvimtree = {
     folder_arrows = 0,
     tree_width = 25,
   },
-  -- ignore = { ".git", "node_modules", ".cache" },
   quit_on_open = 0,
-  gitignore = 1,
-  hide_dotfiles = 0,
   git_hl = 0,
+  disable_window_picker = 0,
   root_folder_modifier = table.concat { ":t:gs?$?/..", string.rep(" ", 1000), "?:gs?^??" },
-  allow_resize = 1,
-  auto_ignore_ft = { "startify", "dashboard" },
   icons = {
    default = "",
    symlink = "",

@@ -9,7 +9,9 @@ end
 
 M.reset_lvim_settings = function()
   -- Don't highlight after yanking text
-  lvim.autocommands._general_settings[2] = nil
+  if not lvim.custom.yank_highlight then
+    lvim.autocommands._general_settings[2] = nil
+  end
 end
 
 M.set_theme = function()

@@ -21,6 +21,7 @@ local purple = colors.purple
 local red = colors.red
 local white = colors.white
 local yellow = colors.yellow
+local orange = colors.orange
 local one_bg3 = colors.one_bg3
 
 -- Define bg color
@@ -81,6 +82,7 @@ bg("PmenuSel", pmenu_bg)
 bg("PmenuThumb", nord_blue)
 fg("CmpItemAbbr", white)
 fg("CmpItemAbbrMatch", white)
+fg("CmpItemKind", white)
 fg("CmpItemMenu", white)
 
 -- misc
@@ -108,9 +110,11 @@ fg("DashboardHeader", grey_fg)
 fg("DashboardShortcut", grey_fg)
 
 -- Git signs
-fg_bg("DiffAdd", nord_blue, "none")
-fg_bg("DiffChange", grey_fg, "none")
-fg_bg("DiffModified", nord_blue, "none")
+fg_bg("DiffAdd", blue, "NONE")
+fg_bg("DiffChange", grey_fg, "NONE")
+fg_bg("DiffChangeDelete", red, "NONE")
+fg_bg("DiffModified", red, "NONE")
+fg_bg("DiffDelete", red, "NONE")
 
 -- Indent blankline plugin
 fg("IndentBlanklineChar", line)
@@ -231,19 +235,55 @@ fg("NvimTreeLspDiagnosticsInformation", green)
 fg("NvimTreeLspDiagnosticsHint", purple)
 -- ]]
 
+local section_title_colors = {
+   white,
+   blue,
+   red,
+   green,
+   yellow,
+   purple,
+   orange,
+}
+
+for i, color in ipairs(section_title_colors) do
+   vim.cmd("highlight CheatsheetTitle" .. i .. " guibg = " .. color .. " guifg=" .. black)
+end
+
 -- Disable some highlight in nvim tree if transparency enabled
 if lvim.transparent_window then
+  bg("NormalFloat", "NONE")
   bg("NvimTreeNormal", "NONE")
+  bg("NvimTreeNormalNC", "NONE")
   bg("NvimTreeStatusLineNC", "NONE")
   bg("NvimTreeVertSplit", "NONE")
   fg("NvimTreeVertSplit", grey)
+
+  -- telescope
+  bg("TelescopeBorder", "NONE")
+  bg("TelescopePrompt", "NONE")
+  bg("TelescopeResults", "NONE")
+  bg("TelescopePromptBorder", "NONE")
+  bg("TelescopePromptNormal", "NONE")
+  bg("TelescopeNormal", "NONE")
+  bg("TelescopePromptPrefix", "NONE")
+  fg("TelescopeBorder", one_bg)
+  fg_bg("TelescopeResultsTitle", black, blue)
 end
 
 -- Telescope
-fg("TelescopeBorder", one_bg)
-fg_bg("TelescopePreviewTitle", green, one_bg)
-fg_bg("TelescopePromptTitle", blue, one_bg)
-fg_bg("TelescopeResultsTitle", red, one_bg)
+fg_bg("TelescopeBorder", darker_black, darker_black)
+fg_bg("TelescopePromptBorder", black2, black2)
+
+fg_bg("TelescopePromptNormal", white, black2)
+fg_bg("TelescopePromptPrefix", red, black2)
+
+bg("TelescopeNormal", darker_black)
+
+fg_bg("TelescopePreviewTitle", black, green)
+fg_bg("TelescopePromptTitle", black, red)
+fg_bg("TelescopeResultsTitle", darker_black, darker_black)
+
+bg("TelescopeSelection", black2)
 
 -- Whichkey
 fg("WhichKey", purple)

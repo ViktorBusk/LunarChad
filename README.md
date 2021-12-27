@@ -49,7 +49,7 @@
 <img src=".utils/images/lsp_install.png?raw=true"></img>
 
 ## Installation
-**LunarChad** is a configured version of [LunarVim](https://github.com/LunarVim/LunarVim#install-in-one-command). For more information please read the LunarVim documentation at [lunarvim.org](https://www.lunarvim.org/). Make sure you have the release version of Neovim (0.5).
+**LunarChad** is a configured version of [LunarVim](https://github.com/LunarVim/LunarVim#install-in-one-command). For more information please read the LunarVim documentation at [lunarvim.org](https://www.lunarvim.org/). Make sure you have the release version of Neovim (0.6).
 ```sh
 bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh)
 
@@ -78,9 +78,7 @@ lvim.custom = {
   theme = "onedarker",
   -- TODO: Add option to use default NvChad mappings
   -- Maybe add option to provide a "chadrc" and/or "init" from an existing NvChad config
-  NvChad ={
-    mappings = true, -- If true, Set default keybindings to NvChad defaults, else use LunarVim defaults
-  },
+  yank_highlight = false, -- Highlight after yanking text
   doxygen_highlight = {
     enable = false, -- Doxygen highlights is still used if treesitter is not active in the current buffer
     bold_highlight = false,
@@ -111,6 +109,23 @@ lvim.custom = {
     },
   }
 }
+
+-- General
+lvim.log.level = "warn"
+
+-- Termnial
+lvim.builtin.terminal.active = true
+lvim.builtin.terminal.direction = "horizontal"
+lvim.builtin.terminal.size = 15
+lvim.builtin.terminal.shade_terminals = true
+
+-- Change the timeoutlen for whichkey to show
+vim.opt.timeoutlen = 400
+
+-- Show/hide eye candy
+vim.opt.showmode = true
+vim.opt.ruler = false
+vim.opt.cmdheight = 1
 
 -- General
 lvim.log.level = "warn"

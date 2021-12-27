@@ -4,9 +4,7 @@ lvim.custom = {
   theme = "onedarker",
   -- TODO: Add option to use default NvChad mappings
   -- Maybe add option to provide a "chadrc" and/or "init" from an existing NvChad config
-  NvChad ={
-    mappings = true, -- If true, Set default keybindings to NvChad defaults, else use LunarVim defaults
-  },
+  yank_highlight = false, -- Highlight after yanking text
   doxygen_highlight = {
     enable = false, -- Doxygen highlights is still used if treesitter is not active in the current buffer
     bold_highlight = false,
