@@ -11,7 +11,7 @@ lvim.custom = {
   },
   base16 = {
     -- Overrides the current theme (lvim.custom.theme)
-    enable = true, -- If set to "false", "lvim.custom.theme" will be used instead.
+    enable = false, -- If set to "false", "lvim.custom.theme" will be used instead.
     italic_comments = false,
     document_highlight = {
       enable = false,
