@@ -73,6 +73,7 @@ Example Config (default):
 
 ```lua
 -- ~/.config/lvim/lua/custom/options.lua
+
 lvim.custom = {
   tab = 2, -- tabline, swhiftwidth, tabstop
   theme = "onedarker",
@@ -109,23 +110,6 @@ lvim.custom = {
     },
   }
 }
-
--- General
-lvim.log.level = "warn"
-
--- Termnial
-lvim.builtin.terminal.active = true
-lvim.builtin.terminal.direction = "horizontal"
-lvim.builtin.terminal.size = 15
-lvim.builtin.terminal.shade_terminals = true
-
--- Change the timeoutlen for whichkey to show
-vim.opt.timeoutlen = 400
-
--- Show/hide eye candy
-vim.opt.showmode = true
-vim.opt.ruler = false
-vim.opt.cmdheight = 1
 
 -- General
 lvim.log.level = "warn"
