@@ -25,9 +25,9 @@ local orange = colors.orange
 local one_bg3 = colors.one_bg3
 
 -- functions for setting highlights
-local fg = require("core.utils").fg
-local fg_bg = require("core.utils").fg_bg
-local bg = require("core.utils").bg
+local fg = require("custom.utils").fg
+local fg_bg = require("custom.utils").fg_bg
+local bg = require("custom.utils").bg
 
 -- Comments
 if lvim.custom.base16.italic_comments then

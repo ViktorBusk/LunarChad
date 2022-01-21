@@ -1,6 +1,6 @@
 -- Custom lvim config
 lvim.custom = {
-  tab = 2, -- tabline, swhiftwidth, tabstop
+  tab = 4, -- tabline, swhiftwidth, tabstop
   theme = "onedarker",
   -- TODO: Add option to use default NvChad mappings
   -- Maybe add option to provide a "chadrc" and/or "init" from an existing NvChad config
@@ -11,7 +11,7 @@ lvim.custom = {
   },
   base16 = {
     -- Overrides the current theme (lvim.custom.theme)
-    enable = false, -- If set to "false", "lvim.custom.theme" will be used instead.
+    enable = true, -- If set to "false", "lvim.custom.theme" will be used instead.
     italic_comments = false,
     document_highlight = {
       enable = false,
@@ -33,7 +33,14 @@ lvim.custom = {
       next = "cycle", -- How to retrieve the next buffer
       quit = true -- Exit when last buffer is deleted
     },
-  }
+  },
+  terminal = {
+    colors = {
+      custom_profile = {
+        enable = true,
+      },
+    },
+  },
 }
 
 -- General
